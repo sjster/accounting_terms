@@ -21,7 +21,8 @@ data_split = [[elem[0], elem[1].strip().split('.')] for elem in data]
 data_split_cleaned = []
 for elem in data_split:
     if('' in elem[1]):
-        data_split_cleaned.append([elem[0].strip(), elem[1].remove('')])
+        elem[1].remove('')
+        data_split_cleaned.append([elem[0].strip(), elem[1]])
     else:
         data_split_cleaned.append([elem[0].strip(), elem[1]])
 
